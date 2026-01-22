@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Interval (in seconds) to update the status (for refreshing the media info)
 UPDATE_INTERVAL=5
-
-# Define the width of the display (characters shown at once)
-WIDTH=17  # You can adjust this to the size of your display
+WIDTH=17  
 
 # Define the scrolling speed in seconds (lower is faster)
-SCROLL_SPEED=0.20  # Adjust this to control scroll speed, smaller value = faster scroll
+SCROLL_SPEED=0.20
 
 # Initial media info
 current_media_info=""
@@ -35,17 +32,15 @@ scroll_text() {
     text="${text%}"
 
     # Add a space at the end to ensure the gap between the end and beginning
-    long_text="$text  $text"  # Duplicate text to create a seamless loop
+    long_text="$text  $text"
 
     len=${#long_text}
 
     # Infinite loop to scroll text
-    while true; do
-        # Loop over the text to create continuous scrolling (starting from the right)
-        for ((i=$len-$WIDTH; i>=0; i--)); do
-            # Format the output as JSON with the 'text' field
+    while true; do      
+        for ((i=$len-$WIDTH; i>=0; i--)); do           
             echo "{\"text\": \"${long_text:$i:$WIDTH}\"}"
-            sleep $SCROLL_SPEED  # Sleep time controls scroll speed
+            sleep $SCROLL_SPEED
         done
     done
 }
