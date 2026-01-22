@@ -14,14 +14,6 @@ window#waybar {
     border: 1px solid #ffffff;
 }
 
-/* Below is the config for a drop shadow, turn border off for window#waybar */
-/*#waybar > box {*/
-/*   border: 1px solid #ffffff;*/
-/*    margin: 0px 5px 5px 0px;*/
-/*    box-shadow: 5px 5px 0px 0px rgba(255, 255, 255, 0.3);*/
-/*}*/
-
-
 #workspaces button {
 	padding: 0px;
 	color: #5D5D5D;
