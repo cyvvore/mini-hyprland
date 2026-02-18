@@ -1,6 +1,6 @@
 #!/bin/bash
 
-status=$(mullvad status | tr -d '\n')  # Remove newlines
+status=$(mullvad status | tr -d '\n')
 
 # Check for exact status
 if echo "$status" | grep -qi "Disconnected"; then
